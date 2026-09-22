@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şeyo Nail | Protez Tırnak & Nail Art Stüdyosu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #c89680;
+            --primary-dark: #a8745f;
+            --secondary: #2c2623;
+            --accent: #e8d5c8;
+            --bg-light: #faf7f5;
+            --white: #ffffff;
+            --gray-light: #f3ece7;
+            --gray-text: #665e58;
+            --shadow: 0 10px 30px rgba(44, 38, 35, 0.08);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--secondary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER & NAV */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(250, 247, 245, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--primary);
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(200, 150, 128, 0.3);
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 180px 0 100px;
+            display: flex;
+            align-items: center;
+            min-height: 90vh;
+            background: linear-gradient(135deg, #faf7f5 0%, #f3ece7 100%);
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--gray-text);
+            margin-bottom: 35px;
+            max-width: 500px;
+        }
+
+        .hero-img-box {
+            position: relative;
+            border-radius: 200px 200px 20px 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 8px solid var(--white);
+        }
+
+        .hero-img-box img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* SERVICES */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            color: var(--secondary);
+        }
+
+        .section-title p {
+            color: var(--primary);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(200, 150, 128, 0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--gray-text);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        .service-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--gray-light);
+        }
+
+        .price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .time {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+        }
+
+        .add-service-btn {
+            width: 100%;
+            padding: 10px;
+            background: var(--gray-light);
+            border: none;
+            border-radius: 10px;
+            color: var(--secondary);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .add-service-btn.selected {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        /* LOOKBOOK / GALLERY */
+        .gallery-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 22px;
+            background: transparent;
+            border: 1px solid var(--primary);
+            border-radius: 30px;
+            color: var(--secondary);
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 350px;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* BOOKING FORM SECTION */
+        .booking-section {
+            background: var(--white);
+            border-radius: 30px;
+            padding: 60px;
+            box-shadow: var(--shadow);
+            margin-top: 50px;
+        }
+
+        .booking-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: var(--bg-light);
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--primary);
+            background: var(--white);
+        }
+
+        .summary-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 20px;
+            height: fit-content;
+        }
+
+        .summary-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+        }
+
+        .selected-services-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .selected-services-list li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .total-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid var(--primary);
+        }
+
+        /* FAQ */
+        .faq-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 0 25px 20px;
+            color: var(--gray-text);
+            display: none;
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-size: 2.2rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .footer-logo span {
+            color: var(--primary);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero-grid, .booking-form, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .booking-section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">ŞEYO <span>NAIL</span></a>
+                <ul class="nav-links">
+                    <li><a href="#hizmetler">Hizmetler</a></li>
+                    <li><a href="#galeri">Galeri</a></li>
+                    <li><a href="#sss">SSS</a></li>
+                    <li><a href="#iletisim">İletişim</a></li>
+                </ul>
+                <a href="#randevu" class="btn">Randevu Al</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <h1>Tırnaklarınızda Sanat & Zarafet</h1>
+                    <p>Kişiselleştirilmiş tırnak tasarımları, medikal manikür ve uzun ömürlü protez tırnak uygulamalarıyla tarzınızı parmak uçlarınıza yansıtın.</p>
+                    <a href="#randevu" class="btn">Hemen Randevu Oluştur</a>
+                </div>
+                <div class="hero-img-box">
+                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=80" alt="Nail Art Tasarımı">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HİZMETLER -->
+    <section id="hizmetler" class="section">
+        <div class="container">
+            <div class="section-title">
+                <p>Neler Sunuyoruz?</p>
+                <h2>Hizmet Kataloğu</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-id="1" data-name="Özel Nail Art Tasarımı" data-price="450">
+                    <div>
+                        <h3>Özel Nail Art</h3>
+                        <p>Kişiye özel çizimler, 3D taş detayları, french ve trend renk kombinasyonları.</p>
+                    </div>
+                    <div>
+                        <div class="service-meta">
+                            <span class="price">₺450</span>
+                            <span class="time"><i class="far fa-clock"></i> 60 Dk</span>
+                        </div>
+                        <button class="add-service-btn" onclick="toggleService(1)">Randevuya Ekle</button>
+                    </div>
+                </div>
+
+                <div class="service-card" data-id="2" data-name="Protez Tırnak (Jel Set)" data-price="850">
+                    <div>
+                        <h3>Protez Tırnak (Jel)</h3>
+                        <p>Tırnak yapınıza uygun medikal uzatma, form verme ve pürüzsüz yüzey tasarımı.</p>
+                    </div>
+                    <div>
+                        <div class="service-meta">
+                            <span class="price">₺850</span>
+                            <span class="time"><i class="far fa-clock"></i> 90 Dk</span>
+                        </div>
+                        <button class="add-service-btn" onclick="toggleService(2)">Randevuya Ekle</button>
+                    </div>
+                </div>
+
+                <div class="service-card" data-id="3" data-name="Kalıcı Oje Manikürlü" data-price="500">
+                    <div>
+                        <h3>Kalıcı Oje</h3>
+                        <p>3-4 hafta boyunca parlaklığını koruyan, soyulmayan kaliteli jel oje uygulaması.</p>
+                    </div>
+                    <div>
+                        <div class="service-meta">
+                            <span class="price">₺500</span>
+                            <span class="time"><i class="far fa-clock"></i> 45 Dk</span>
+                        </div>
+                        <button class="add-service-btn" onclick="toggleService(3)">Randevuya Ekle</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RANDEVU FORMU -->
+    <section id="randevu" class="section" style="background: var(--gray-light);">
+        <div class="container">
+            <div class="section-title">
+                <p>Kolay & Hızlı</p>
+                <h2>Online Randevu Oluştur</h2>
+            </div>
+            <div class="booking-section">
+                <form id="appointmentForm" class="booking-form" onsubmit="sendToWhatsApp(event)">
+                    <div>
+                        <div class="form-group">
+                            <label>Adınız Soyadınız</label>
+                            <input type="text" id="customerName" required placeholder="Örn: Ayşe Yılmaz">
+                        </div>
+                        <div class="form-group">
+                            <label>Telefon Numaranız</label>
+                            <input type="tel" id="customerPhone" required placeholder="05XX XXX XX XX">
+                        </div>
+                        <div class="form-group">
+                            <label>Tarih Seçin</label>
+                            <input type="date" id="appointmentDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Saat Seçin</label>
+                            <select id="appointmentTime" required>
+                                <option value="">Saat Seçiniz</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:30">11:30</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:30">14:30</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:30">17:30</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="summary-card">
+                        <h4>Randevu Özeti</h4>
+                        <ul class="selected-services-list" id="summaryList">
+                            <li style="color: var(--gray-text);">Lütfen yukarıdan en az bir hizmet seçin.</li>
+                        </ul>
+                        <div class="total-price">
+                            <span>Toplam:</span>
+                            <span id="totalAmount">₺0</span>
+                        </div>
+                        <button type="submit" class="btn" style="width:100%; margin-top:25px; text-align:center;">
+                            <i class="fab fa-whatsapp"></i> WhatsApp ile Onayla
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- SSS -->
+    <section id="sss" class="section">
+        <div class="container">
+            <div class="section-title">
+                <p>Aklınıza Takılanlar</p>
+                <h2>Sıkça Sorulan Sorular</h2>
+            </div>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">Protez tırnak ne kadar süre kullanılır? <span>+</span></div>
+                    <div class="faq-answer">Protez tırnakların kullanımı ortalama 3-4 haftadır. Bu süre sonunda tırnak uzadığı için bakım yapılması önerilir.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">Aletleriniz sterilize ediliyor mu? <span>+</span></div>
+                    <div class="faq-answer">Kesinlikle! Tüm metal ekipmanlarımız her işlem sonrası tıbbi otoklav sterilizasyon cihazından geçirilerek paketlenir.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="iletisim">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">ŞEYO <span>NAIL</span></div>
+                    <p>Zarafetinizi parmak uçlarınıza taşıyan kişiselleştirilmiş profesyonel tırnak bakım ve tasarım salonu.</p>
+                </div>
+                <div>
+                    <h4>Çalışma Saatleri</h4>
+                    <p>Pzt - Cmt: 10:00 - 19:30<br>Pazar: Kapalı</p>
+                </div>
+                <div>
+                    <h4>İletişim</h4>
+                    <p>Instagram: @seyonail<br>Konum: İstanbul, Türkiye</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP BUTONU -->
+    <a href="https://wa.me/905XXXXXXXXX" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // İLETİŞİM NUMARANIZI BURAYA YAZIN (Başında + veya 0 olmadan)
+        const WHATSAPP_NUMBER = "905XXXXXXXXX";
+
+        const services = [
+            { id: 1, name: "Özel Nail Art Tasarımı", price: 450 },
+            { id: 2, name: "Protez Tırnak (Jel Set)", price: 850 },
+            { id: 3, name: "Kalıcı Oje Manikürlü", price: 500 }
+        ];
+
+        let selectedServices = [];
+
+        // Bugünün tarihinden öncesini seçmeyi engelle
+        document.getElementById('appointmentDate').min = new Date().toISOString().split('T')[0];
+
+        function toggleService(id) {
+            const index = selectedServices.indexOf(id);
+            const card = document.querySelector(`.service-card[data-id="${id}"] .add-service-btn`);
+            
+            if (index === -1) {
+                selectedServices.push(id);
+                card.classList.add('selected');
+                card.textContent = 'Eklendi ✓';
+            } else {
+                selectedServices.splice(index, 1);
+                card.classList.remove('selected');
+                card.textContent = 'Randevuya Ekle';
+            }
+            updateSummary();
+        }
+
+        function updateSummary() {
+            const list = document.getElementById('summaryList');
+            const totalEl = document.getElementById('totalAmount');
+            list.innerHTML = '';
+            let total = 0;
+
+            if (selectedServices.length === 0) {
+                list.innerHTML = '<li style="color: var(--gray-text);">Lütfen en az bir hizmet seçin.</li>';
+                totalEl.textContent = '₺0';
+                return;
+            }
+
+            selectedServices.forEach(id => {
+                const item = services.find(s => s.id === id);
+                total += item.price;
+                const li = document.createElement('li');
+                li.innerHTML = `<span>${item.name}</span> <b>₺${item.price}</b>`;
+                list.appendChild(li);
+            });
+
+            totalEl.textContent = `₺${total}`;
+        }
+
+        function toggleFaq(element) {
+            element.parentElement.classList.toggle('active');
+        }
+
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+
+            if (selectedServices.length === 0) {
+                alert('Lütfen en az bir hizmet seçiniz.');
+                return;
+            }
+
+            const name = document.getElementById('customerName').value;
+            const phone = document.getElementById('customerPhone').value;
+            const date = document.getElementById('appointmentDate').value;
+            const time = document.getElementById('appointmentTime').value;
+
+            let selectedNames = selectedServices.map(id => services.find(s => s.id === id).name).join(', ');
+            let total = document.getElementById('totalAmount').textContent;
+
+            let message = `Merhaba Şeyo Nail,%0A%0ARandevu Talebi:%0A• *Müşteri:* ${name}%0A• *Telefon:* ${phone}%0A• *Hizmetler:* ${selectedNames}%0A• *Tarih:* ${date}%0A• *Saat:* ${time}%0A• *Tahmini Tutar:* ${total}`;
+
+            window.open(`https://wa.me/905051715127?text=${message}`, '_blank');
+
+        }
+    </script>
+</body>
+</html>
